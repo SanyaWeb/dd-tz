@@ -1,0 +1,15 @@
+@import './scss/fonts';
+
+:root, html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  font-size: 16px;
+}
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background: #ecedee;
+  min-height: 100%;
+}
+
