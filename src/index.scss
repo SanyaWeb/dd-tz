@@ -6,10 +6,43 @@
   height: 100%;
   min-height: 100%;
   font-size: 16px;
+  @media only screen and (max-width: 940px) {
+    font-size: 14px;
+  }
 }
+
 body {
   font-family: 'Titillium Web', sans-serif;
   background: #ecedee;
   min-height: 100%;
 }
 
+.app {
+  max-width: 100%;
+}
+.wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
+  @media only screen and (max-width: 1320px) {
+    width: 900px;
+  }
+  @media only screen and (max-width: 940px) {
+    width: auto;
+    max-width: 100%;
+    margin: 20px;
+  }
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+  color: #222;
+}

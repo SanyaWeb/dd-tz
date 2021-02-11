@@ -1,0 +1,97 @@
+.services-carousel {
+  margin: 40px 0;
+}
+
+.services-carousel__wrapper {
+  padding: 3.2rem;
+  @media only screen and (max-width: 750px) {
+    padding: 2rem;
+  }
+}
+
+.services-carousel__slider {
+  padding: 0 200px;
+  position: relative;
+  margin-top: 40px;
+  @media only screen and (max-width: 1320px) {
+    padding: 0 150px;
+  }
+  @media only screen and (max-width: 940px) {
+    padding: 0 90px;
+  }
+  @media only screen and (max-width: 750px) {
+    padding: 0 40px;
+    margin-top: 20px;
+  }
+}
+
+.services-carousel__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.services-carousel__item-icon {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 35px 0;
+  background: #cdcdcd url('./img/services-icon.png') no-repeat center center;
+  @media only screen and (max-width: 400px) {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 20px 0;
+  }
+}
+.services-carousel__item-desc {
+  text-align: center;
+  max-width: 220px;
+}
+.services-carousel__item-title {
+  text-transform: uppercase;
+  color: #222222;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+.services-carousel__item-info {
+  font-size: 1rem;
+  font-weight: 100;
+  color: #777777;
+}
+
+.services-carousel-arrow {
+  width: 33px;
+  height: 106px;
+  background: url('./img/arrows.png') no-repeat;
+  cursor: pointer;
+  margin: 72px 0;
+  position: absolute;
+  @media only screen and (max-width: 400px) {
+    margin: 32px 0;
+  }
+}
+
+.services-carousel-arrow_prev {
+  background-position: left center;
+  left: 0;
+}
+.services-carousel-arrow_next {
+  background-position: right center;
+  right: 0;
+}
+
+.owl-carousel {
+  position: static;
+}
+.owl-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

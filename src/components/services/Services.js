@@ -1,12 +1,15 @@
+import React from "react";
+
 import ServicesCarousel from './servicesCarousel/ServicesCarousel';
 import ServicesList from './servicesList/ServicesList';
 
+
 function Services() {
     return (
-        <section className="services">
+        <React.Fragment>
             <ServicesCarousel />
             <ServicesList />
-        </section>
+        </React.Fragment>
     );
 }
 

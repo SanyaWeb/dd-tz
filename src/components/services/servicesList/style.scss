@@ -1,0 +1,12 @@
+.services-list {
+  margin: 40px 0;
+}
+.services-list__wrapper {
+  padding: 3.2em;
+  @media only screen and (max-width: 750px) {
+    padding: 2rem;
+  }
+}
+.services-list__description {
+  text-align: center;
+}

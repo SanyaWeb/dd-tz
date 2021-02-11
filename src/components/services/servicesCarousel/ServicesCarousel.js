@@ -1,16 +1,106 @@
-function ServicesCarousel() {
-    return (
-        <div className="services-carousel">
-            <div className="wrapper wrapper_services-carousel">
-                <h2>Services we provide</h2>
-                <div className="services-carousel__description">
-                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.</p>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-                        eget lacinia odio sem nec elit.</p>
+import React, { Component } from 'react';
+import ServicesTextInfo from "../servicesTextInfo/ServicesTextInfo";
+
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+import './style.scss';
+
+class ServicesCarousel extends Component {
+    state = {
+        items: [
+            {
+                id: 1,
+                title: 'Branding',
+                info: 'Lorem ipsum dolor sit amet, \n' +
+                    'consectetuer adipiscing elit, sed diam nonummy nibh.'
+            },
+            {
+                id: 2,
+                title: 'Design',
+                info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem  '
+            },
+            {
+                id: 3,
+                title: 'Development',
+                info: 'At vero eos et accusamus et iusto odio dignissimos qui blanditiis praesentium.'
+            },
+            {
+                id: 4,
+                title: 'Rocket science',
+                info: 'Lorem ipsum dolor sit amet, consectetuer \n' +
+                    'adipiscing elit, sed diam nonummy nibh.'
+            },
+        ],
+        breakPoints:[
+            { width: 1, itemsToShow: 1 },
+            { width: 550, itemsToShow: 2 },
+            { width: 850, itemsToShow: 3 },
+        ]
+    }
+
+
+    render () {
+        const { items } = this.state;
+        let navText = ['', ''];
+        let navClass = [
+            'services-carousel-arrow services-carousel-arrow_prev',
+            'services-carousel-arrow services-carousel-arrow_next'
+        ];
+        let responsive = {
+            1320:{
+                items:3
+            },
+            750:{
+                items:2,
+                margin: 60
+            },
+            650:{
+                items:2,
+                margin: 40
+            },
+            0:{
+                items:1
+            },
+        }
+        return (
+            <section className="services-carousel">
+                <div className="wrapper">
+                    <div className="services-carousel__wrapper">
+                        <ServicesTextInfo />
+                        <div className="services-carousel__slider">
+                            <OwlCarousel
+                                className=''
+                                loop
+                                margin={100}
+                                nav
+                                navText={navText}
+                                dots={false}
+                                navElement={'div'}
+                                navClass={navClass}
+                                responsive={responsive}>
+                                {items.map(item =>
+                                    <div className={"services-carousel__item"} key={item.id}>
+                                        <div className="services-carousel__item-icon" />
+                                        <div className="services-carousel__item-desc">
+                                            <h3 className="services-carousel__item-title">
+                                                {item.title}
+                                            </h3>
+                                            <div className="services-carousel__item-info">
+                                                <p>{item.info}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                )}
+                            </OwlCarousel>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    );
+            </section>
+        );
+    }
 }
 
 export default ServicesCarousel;
