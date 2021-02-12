@@ -33,37 +33,32 @@ class ServicesCarousel extends Component {
                     'adipiscing elit, sed diam nonummy nibh.'
             },
         ],
-        breakPoints:[
-            { width: 1, itemsToShow: 1 },
-            { width: 550, itemsToShow: 2 },
-            { width: 850, itemsToShow: 3 },
-        ]
-    }
-
-
-    render () {
-        const { items } = this.state;
-        let navText = ['', ''];
-        let navClass = [
+        navText: ['', ''],
+        navClass: [
             'services-carousel-arrow services-carousel-arrow_prev',
             'services-carousel-arrow services-carousel-arrow_next'
-        ];
-        let responsive = {
-            1320:{
-                items:3
+        ],
+        responsive: {
+            1320: {
+                items: 3
             },
-            750:{
-                items:2,
+            750: {
+                items: 2,
                 margin: 60
             },
-            650:{
-                items:2,
+            650: {
+                items: 2,
                 margin: 40
             },
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-        }
+        },
+    }
+
+    render () {
+        const { items, navText, navClass, responsive  } = this.state;
+
         return (
             <section className="services-carousel">
                 <div className="wrapper">
@@ -71,7 +66,6 @@ class ServicesCarousel extends Component {
                         <ServicesTextInfo />
                         <div className="services-carousel__slider">
                             <OwlCarousel
-                                className=''
                                 loop
                                 margin={100}
                                 nav
@@ -81,7 +75,7 @@ class ServicesCarousel extends Component {
                                 navClass={navClass}
                                 responsive={responsive}>
                                 {items.map(item =>
-                                    <div className={"services-carousel__item"} key={item.id}>
+                                    <div className="services-carousel__item" key={item.id}>
                                         <div className="services-carousel__item-icon" />
                                         <div className="services-carousel__item-desc">
                                             <h3 className="services-carousel__item-title">

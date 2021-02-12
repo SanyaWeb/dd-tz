@@ -1,3 +1,9 @@
+.services__title {
+  @media only screen and (max-width: 750px) {
+    font-size: 2em;
+  }
+}
+
 .services__description {
   text-align: center;
   margin: 0.1em 0;
